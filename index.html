@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Hijacking JARVIS: Benchmarking Mobile GUI Agents against Unprivileged Third Parties</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -138,17 +138,17 @@
 </section>
 
 
-<!-- Teaser video-->
+<!-- Teaser image -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
+      <img 
+        src="static/images/overview.jpg" 
+        alt="Teaser image"
+        style="width: 100%; height: auto;"
+      >
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Overview of the AgentHazard dynamic task execution environment.
       </h2>
     </div>
   </div>
@@ -163,7 +163,38 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Mobile GUI agents are designed to autonomously execute
+diverse device-control tasks by interpreting and interacting
+with mobile screens. Despite notable advancements, their
+resilience in real-world scenarios—where screen content
+may be partially manipulated by untrustworthy third par-
+ties—remains largely unexplored. Owing to their black-box
+and autonomous nature, these agents are vulnerable to ma-
+nipulations that could compromise user devices. In this work,
+we present the first systematic investigation into the vul-
+nerabilities of mobile GUI agents. We introduce a scalable
+attack simulation framework AgentHazard, which enables
+flexible and targeted modifications of screen content within
+existing applications. Leveraging this framework, we de-
+velop a comprehensive benchmark suite comprising both
+a dynamic task execution environment and a static dataset
+of vision-language-action tuples, totaling over 3,000 attack
+scenarios. The dynamic environment encompasses 58 re-
+producible tasks in an emulator with various types of haz-
+ardous UI content, while the static dataset is constructed
+from 210 screenshots collected from 14 popular commercial
+apps. Importantly, our content modifications are designed
+to be feasible for unprivileged third parties. We evaluate 7
+widely-used mobile GUI agents and 5 common backbone
+models using our benchmark. Our findings reveal that all
+examined agents are significantly influenced by misleading
+third-party content (with an average misleading rate of 28.8%
+in human-crafted attack scenarios) and that their vulnerabili-
+ties are closely linked to the employed perception modalities
+and backbone LLMs. Furthermore, we assess training-based
+mitigation strategies, highlighting both the challenges and
+opportunities for enhancing the robustness of mobile GUI
+agents.
           </p>
         </div>
       </div>
@@ -275,7 +306,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -285,7 +316,7 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
