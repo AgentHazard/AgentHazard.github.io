@@ -26,7 +26,8 @@
 
 
   <title>Hijacking JARVIS: Benchmarking Mobile GUI Agents against Unprivileged Third Parties</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
   <link rel="stylesheet" href="static/css/bulma.min.css">
@@ -90,7 +91,7 @@
               <div class="publication-links">
                 <!-- Arxiv PDF link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                  <a href="https://cloud.tsinghua.edu.cn/f/8a26e3521fbb4047bc36/" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -99,36 +100,25 @@
                   </a>
                 </span>
 
-                <!-- Supplementary PDF link -->
-                <span class="link-block">
-                  <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                    </span>
-                    <span>Supplementary</span>
-                  </a>
-                </span>
-
                 <!-- Github link -->
                 <span class="link-block">
-                  <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                  <a href="https://github.com/Zsbyqx20/AgentHazard" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code & Data</span>
                   </a>
                 </span>
 
                 <!-- ArXiv abstract Link -->
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                  <a href="https://github.com/Zsbyqx20/AWAttackerApplier" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
-                      <i class="ai ai-arxiv"></i>
+                      <i class="fab fa-github"></i>
                     </span>
-                    <span>arXiv</span>
+                    <span>Hijacking Tool</span>
                   </a>
                 </span>
               </div>
@@ -214,21 +204,27 @@
             width: 100%;
             border-collapse: collapse;
           }
-          .llm-table th, .llm-table td {
+
+          .llm-table th,
+          .llm-table td {
             padding: 0.5em;
             text-align: center;
             border: 1px solid #dbdbdb;
           }
+
           .llm-table th {
             background: #f5f5f5;
             font-weight: 600;
           }
+
           .llm-table td {
             vertical-align: middle;
           }
+
           .llm-table tr:hover {
             background-color: #f8f9fa;
           }
+
           .llm-table .model-name {
             font-weight: 600;
             background: #f5f5f5;
@@ -236,6 +232,7 @@
             vertical-align: middle;
             width: 120px;
           }
+
           .llm-table tr.model-group {
             border-top: 2px solid #666;
           }
@@ -335,7 +332,8 @@
         <div class="content is-small">
           <p><strong>Notes:</strong></p>
           <ul>
-            <li>The score is calculated as the average of <code>Acc<sub>safe</sub> - Acc<sub>attack</sub> + MR</code></li>
+            <li>The score is calculated as the average of <code>Acc<sub>safe</sub> - Acc<sub>attack</sub> + MR</code>
+            </li>
           </ul>
         </div>
 
@@ -343,27 +341,32 @@
           Success Rates and Misleading Rates of agents on different attack settings.
         </p>
         <style>
-          .content table td, .content table th {
+          .content table td,
+          .content table th {
             vertical-align: middle;
             text-align: center;
           }
+
           .content table th:not([align]) {
             text-align: center;
           }
+
           .results-table-container {
             overflow-x: auto;
             margin: 2rem 0;
-            box-shadow: 0 2px 3px rgba(10,10,10,.1);
+            box-shadow: 0 2px 3px rgba(10, 10, 10, .1);
             border-radius: 6px;
             width: 100%;
             max-width: 100%;
           }
+
           .results-table {
             font-size: 0.85rem;
             width: 100%;
             max-width: 100%;
             border-collapse: collapse;
           }
+
           .results-table th {
             position: sticky;
             top: 0;
@@ -373,42 +376,56 @@
             text-align: center;
             border: 1px solid #dbdbdb;
             vertical-align: middle;
-            height: 40px;  /* 为表头添加固定高度 */
+            height: 40px;
+            /* 为表头添加固定高度 */
           }
+
           .results-table th[rowspan="2"] {
-            height: 80px;  /* 两行高度的表头 */
+            height: 80px;
+            /* 两行高度的表头 */
           }
-          .results-table th, .results-table td {
+
+          .results-table th,
+          .results-table td {
             padding: 0.4em 0.6em;
             border: 1px solid #dbdbdb;
             white-space: nowrap;
             text-align: center;
             vertical-align: middle;
           }
+
           /* 为数据列设置固定宽度 */
           .results-table th:not([rowspan]),
-          .results-table td:nth-child(n+4) {  /* 从第4列开始是数据列 */
-            width: 60px;  /* 设置固定宽度 */
+          .results-table td:nth-child(n+4) {
+            /* 从第4列开始是数据列 */
+            width: 60px;
+            /* 设置固定宽度 */
             min-width: 60px;
             max-width: 60px;
           }
+
           /* 保持非数据列的自然宽度 */
           .results-table th[rowspan],
-          .results-table td:nth-child(-n+3) {  /* 前3列是非数据列 */
+          .results-table td:nth-child(-n+3) {
+            /* 前3列是非数据列 */
             width: auto;
             min-width: unset;
             max-width: unset;
           }
+
           .results-table td {
             text-align: center;
             height: 32px;
           }
+
           .results-table td[rowspan] {
             vertical-align: middle;
           }
+
           .results-table tbody tr:hover {
             background-color: #f8f9fa;
           }
+
           .results-table .threat-level {
             background: #f5f5f5;
             font-weight: 600;
@@ -416,6 +433,7 @@
             vertical-align: middle !important;
             min-width: 120px;
           }
+
           .results-table .metric-type {
             background: #fafafa;
             font-weight: 500;
@@ -423,24 +441,29 @@
             vertical-align: middle !important;
             min-width: 100px;
           }
+
           /* 调整跨列表头的样式 */
           .results-table th[colspan] {
             padding: 0.6em 0.4em;
             font-weight: 600;
             text-align: center;
           }
+
           /* 调整模型子列的样式 */
           .results-table thead tr:last-child th {
             padding: 0.4em;
             font-weight: 500;
           }
+
           .highlight {
             font-weight: bold;
             background-color: #fff3cd;
           }
+
           .group-border-top {
             border-top: 2px solid #666;
           }
+
           .min-negative-value {
             color: #dc3545;
             font-weight: bold;
@@ -884,7 +907,7 @@
   <!-- End Experiment Results Table -->
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // 添加数值格式化
       const formatNumber = (value) => {
         if (typeof value !== 'number') return value;
@@ -913,7 +936,7 @@
 
         const modelName = modelCell.textContent.trim().replace(/\s+/g, ' ');
         console.log('Processing model:', modelName);
-        
+
         if (!modelData.has(modelName)) {
           console.log('Initializing data for model:', modelName);
           modelData.set(modelName, {
@@ -927,20 +950,20 @@
         const accSafe = parseFloat(row.querySelector('td:nth-child(3)').textContent);
         const accAttack = parseFloat(row.querySelector('td:nth-child(4)').textContent);
         const mr = parseFloat(row.querySelector('td:nth-child(5)').textContent);
-        
+
         console.log(`Values for ${modelName} (row ${i}):`, {
           accSafe,
           accAttack,
           mr
         });
-        
+
         if (!isNaN(accSafe) && !isNaN(accAttack) && !isNaN(mr)) {
           const score = accSafe - accAttack + mr;
           const data = modelData.get(modelName);
           data.scores.push(score);
           data.totalScore += score;
           data.count += 1;
-          
+
           console.log(`Score calculated for ${modelName} (row ${i}):`, {
             score,
             totalScore: data.totalScore,
@@ -958,7 +981,7 @@
             const nextAccSafe = parseFloat(nextRow.querySelector('td:nth-child(2)').textContent);
             const nextAccAttack = parseFloat(nextRow.querySelector('td:nth-child(3)').textContent);
             const nextMr = parseFloat(nextRow.querySelector('td:nth-child(4)').textContent);
-            
+
             console.log(`Values for ${modelName} (row ${i + j}):`, {
               accSafe: nextAccSafe,
               accAttack: nextAccAttack,
@@ -971,7 +994,7 @@
               data.scores.push(score);
               data.totalScore += score;
               data.count += 1;
-              
+
               console.log(`Score calculated for ${modelName} (row ${i + j}):`, {
                 score,
                 totalScore: data.totalScore,
@@ -986,7 +1009,7 @@
 
       // 更新每个模型的平均得分
       console.log('Final model data:', Object.fromEntries(modelData));
-      
+
       modelData.forEach((data, modelName) => {
         if (data.count > 0) {
           const avgScore = data.totalScore / data.count;
@@ -995,7 +1018,7 @@
             count: data.count,
             avgScore
           });
-          
+
           // 找到对应模型的得分单元格
           document.querySelectorAll('.llm-table td.model-name').forEach(cell => {
             if (cell.textContent.trim().replace(/\s+/g, ' ') === modelName) {
@@ -1013,10 +1036,10 @@
       // 为每个 ΔSR 行找到最小的负值并标记
       document.querySelectorAll('.results-table tr').forEach(row => {
         // 找到所有包含 ΔSR 的单元格
-        const metricCells = Array.from(row.querySelectorAll('td')).filter(td => 
+        const metricCells = Array.from(row.querySelectorAll('td')).filter(td =>
           td.textContent.trim() === 'ΔSR'
         );
-        
+
         if (metricCells.length > 0) {
           const metricCell = metricCells[0];
           const cells = Array.from(row.querySelectorAll('td')).slice(3); // 跳过前三列
@@ -1028,7 +1051,7 @@
             .filter(item => !isNaN(item.value) && item.value < 0);
 
           if (negativeValues.length > 0) {
-            const minNegative = negativeValues.reduce((min, current) => 
+            const minNegative = negativeValues.reduce((min, current) =>
               current.value < min.value ? current : min
             );
             minNegative.cell.classList.add('min-negative-value');
