@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- SEO & Social -->
-  <title>Hijacking JARVIS: Benchmarking Mobile GUI Agents against Unprivileged Third Parties</title>
-  <meta name="description" content="We present the first systematic investigation into the vulnerabilities of mobile GUI agents, introducing AgentHazard — a scalable attack simulation framework and benchmark with over 3,000 attack scenarios.">
-  <meta name="keywords" content="mobile GUI agents, adversarial attacks, benchmark, LLM agents, AI security, AgentHazard">
+  <title>Mobile GUI Agents under Real-world Threats: Are We There Yet?</title>
+  <meta name="description" content="AgentHazard — a scalable app content instrumentation framework for benchmarking mobile GUI agents against real-world adversarial threats. Published at MobiSys 2026.">
+  <meta name="keywords" content="mobile GUI agents, adversarial attacks, benchmark, LLM agents, AI security, AgentHazard, MobiSys 2026">
 
-  <meta property="og:title" content="Hijacking JARVIS: Benchmarking Mobile GUI Agents against Unprivileged Third Parties">
-  <meta property="og:description" content="The first systematic investigation into vulnerabilities of mobile GUI agents. We introduce AgentHazard with 3,000+ attack scenarios evaluating 7 agents and 5 backbone LLMs.">
+  <meta property="og:title" content="Mobile GUI Agents under Real-world Threats: Are We There Yet?">
+  <meta property="og:description" content="The first systematic benchmark for adversarial attacks on mobile GUI agents. 3,000+ scenarios, 6 agents, 42% average misleading rate. Published at MobiSys 2026.">
   <meta property="og:url" content="https://agenthazard.github.io/">
   <meta property="og:image" content="https://agenthazard.github.io/static/images/overview.jpg">
   <meta property="og:image:width" content="1200">
@@ -19,8 +19,8 @@
   <meta property="og:type" content="article">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hijacking JARVIS: Benchmarking Mobile GUI Agents">
-  <meta name="twitter:description" content="The first systematic benchmark for adversarial attacks on mobile GUI agents. 3,000+ scenarios, 7 agents, 5 backbone LLMs.">
+  <meta name="twitter:title" content="Mobile GUI Agents under Real-world Threats: Are We There Yet?">
+  <meta name="twitter:description" content="Benchmarking mobile GUI agents against adversarial third-party content. 3,000+ scenarios, 42% avg misleading rate. MobiSys 2026.">
   <meta name="twitter:image" content="https://agenthazard.github.io/static/images/overview.jpg">
 
   <!-- Favicon -->
@@ -41,7 +41,7 @@
        Navigation
        ===================================================== -->
   <nav class="site-nav" aria-label="Page navigation">
-    <a href="#overview" class="site-nav__brand">Hijacking JARVIS</a>
+    <a href="#overview" class="site-nav__brand">AgentHazard</a>
     <ul class="site-nav__links">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#abstract">Abstract</a></li>
@@ -56,34 +56,49 @@
   <header class="hero-section" id="overview">
     <div class="content-wrapper">
 
-      <p class="hero-eyebrow">Preprint · arXiv 2507.04227 · cs.CR</p>
+      <p class="hero-eyebrow">MobiSys &rsquo;26 &nbsp;&middot;&nbsp; June 21&ndash;25, 2026 &nbsp;&middot;&nbsp; Cambridge, UK</p>
 
       <h1 class="display-title">
-        Hijacking JARVIS: Benchmarking Mobile GUI Agents against Unprivileged Third Parties
+        Mobile GUI Agents under Real-world Threats: Are We There Yet?
       </h1>
 
       <p class="author-list">
-        <span>Guohong Liu</span>
-        <span>Jialei Ye</span>
-        <span>Jiacheng Liu</span>
-        <span>Yuanchun Li</span>
-        <span>Wei Liu</span>
-        <span>Pengzhi Gao</span>
-        <span>Jian Luan</span>
-        <span>Yunxin Liu</span>
+        <span data-aff="1">Guohong Liu</span>
+        <span data-aff="2">Jialei Ye</span>
+        <span data-aff="3">Jiacheng Liu</span>
+        <span data-aff="4">Wei Liu</span>
+        <span data-aff="4">Pengzhi Gao</span>
+        <span data-aff="4">Jian Luan</span>
+        <span data-aff="1" data-corresponding>Yuanchun Li</span>
+        <span data-aff="1">Yunxin Liu</span>
       </p>
 
+      <p class="affiliation-list">
+        <span><sup>1</sup> Institute for AI Industry Research (AIR), Tsinghua University</span>
+        <span><sup>2</sup> University of Electronic Science and Technology of China</span>
+        <span><sup>3</sup> Peking University</span>
+        <span><sup>4</sup> MiLM Plus, Xiaomi Inc.</span>
+      </p>
+      <p class="corresponding-note">* Corresponding author: Yuanchun Li</p>
+
       <div class="action-links">
-        <a href="https://arxiv.org/abs/2507.04227" target="_blank" rel="noopener" class="action-link">
-          <!-- PDF icon -->
+        <a href="https://doi.org/10.1145/3745756.3809249" target="_blank" rel="noopener" class="action-link">
+          <!-- ACM / document icon -->
           <svg viewBox="0 0 384 512" aria-hidden="true">
-            <path d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16h256zM0 64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5C377.3 121.2 384 137.5 384 154.5V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm160 240c0-6.7 2.8-13 7.7-17.6l112-104c7-6.5 17.2-8.2 25.9-4.4s14.4 12.5 14.4 22v48h48c17.7 0 32 14.3 32 32v64c0 17.7-14.3 32-32 32H320v48c0 9.6-5.7 18.2-14.5 22s-18.9 2.1-25.8-4.4l-112-104c-4.9-4.5-7.7-10.9-7.7-17.6zM80 224c0-8.8 7.2-16 16-16h80c8.8 0 16 7.2 16 16s-7.2 16-16 16H96c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16h80c8.8 0 16 7.2 16 16s-7.2 16-16 16H96c-8.8 0-16-7.2-16-16z"/>
+            <path d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16v384c0 8.8 7.2 16 16 16h256zM0 64C0 28.7 28.7 0 64 0h165.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5C377.3 121.2 384 137.5 384 154.5V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z"/>
           </svg>
-          Paper
+          Paper (ACM DL)
+        </a>
+
+        <a href="https://arxiv.org/abs/2507.04227" target="_blank" rel="noopener" class="action-link action-link--secondary">
+          <!-- arXiv icon approximation -->
+          <svg viewBox="0 0 384 512" aria-hidden="true">
+            <path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm56 232c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120z"/>
+          </svg>
+          arXiv
         </a>
 
         <a href="https://github.com/Zsbyqx20/AgentHazard" target="_blank" rel="noopener" class="action-link">
-          <!-- GitHub icon -->
           <svg viewBox="0 0 98 96" aria-hidden="true">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/>
           </svg>
@@ -108,8 +123,8 @@
        ===================================================== -->
   <figure class="teaser-figure animate-on-scroll">
     <div class="content-wrapper">
-      <img src="static/images/overview.jpg" alt="Overview diagram of the AgentHazard dynamic task execution environment, showing how unprivileged third parties can inject hazardous UI content to mislead mobile GUI agents." width="1200" height="675">
-      <figcaption>Overview of the AgentHazard dynamic task execution environment.</figcaption>
+      <img src="static/images/overview.jpg" alt="Overview diagram of the AgentHazard framework, showing how unprivileged third parties inject adversarial content into mobile app screens to mislead GUI agents." width="1200" height="675">
+      <figcaption>Overview of the AgentHazard app content instrumentation framework and dynamic task execution environment.</figcaption>
     </div>
   </figure>
 
@@ -121,7 +136,7 @@
   <div class="content-wrapper">
     <div class="stat-cards animate-on-scroll">
       <div class="stat-card">
-        <div class="stat-card__number">7</div>
+        <div class="stat-card__number">6</div>
         <div class="stat-card__label">Agents Evaluated</div>
       </div>
       <div class="stat-card">
@@ -129,7 +144,7 @@
         <div class="stat-card__label">Attack Scenarios</div>
       </div>
       <div class="stat-card">
-        <div class="stat-card__number">28.8%</div>
+        <div class="stat-card__number">42.0%</div>
         <div class="stat-card__label">Avg Misleading Rate</div>
       </div>
     </div>
@@ -147,29 +162,25 @@
         Abstract
       </h2>
       <p class="abstract-text animate-on-scroll">
-        Mobile GUI agents are designed to autonomously execute
-        diverse device-control tasks by interpreting and interacting
-        with mobile screens. Despite notable advancements, their
-        resilience in real-world scenarios—where screen content
-        may be partially manipulated by untrustworthy third parties—remains largely unexplored.
-        Owing to their black-box and autonomous nature, these agents are vulnerable to
-        manipulations that could compromise user devices. In this work,
-        we present the first systematic investigation into the vulnerabilities of mobile GUI agents.
-        We introduce a scalable attack simulation framework AgentHazard, which enables
-        flexible and targeted modifications of screen content within existing applications.
-        Leveraging this framework, we develop a comprehensive benchmark suite comprising both
-        a dynamic task execution environment and a static dataset of vision-language-action
-        tuples, totaling over 3,000 attack scenarios. The dynamic environment encompasses 58
-        reproducible tasks in an emulator with various types of hazardous UI content, while
-        the static dataset is constructed from 210 screenshots collected from 14 popular
-        commercial apps. Importantly, our content modifications are designed to be feasible
-        for unprivileged third parties. We evaluate 7 widely-used mobile GUI agents and 5
-        common backbone models using our benchmark. Our findings reveal that all examined agents
-        are significantly influenced by misleading third-party content (with an average misleading
-        rate of 28.8% in human-crafted attack scenarios) and that their vulnerabilities are closely
-        linked to the employed perception modalities and backbone LLMs. Furthermore, we assess
-        training-based mitigation strategies, highlighting both the challenges and opportunities
-        for enhancing the robustness of mobile GUI agents.
+        Recent years have witnessed a rapid development of mobile GUI agents powered by large language
+        models (LLMs), which can autonomously execute diverse device-control tasks based on natural
+        language instructions. The increasing accuracy of these agents on standard benchmarks has raised
+        expectations for large-scale real-world deployment, and there are already several commercial
+        agents released and used by early adopters. However, are we really ready for GUI agents
+        integrated into our daily devices as system building blocks? We argue that an important
+        pre-deployment validation is missing to examine whether the agents can maintain their performance
+        under real-world threats. Specifically, unlike existing common benchmarks that are based on
+        simple static app contents, real-world apps are filled with contents from untrustworthy third
+        parties, such as advertisement emails, user-generated posts and media. These contents may
+        inevitably appear in the agents' observation space and influence the task execution process. To
+        this end, we introduce a scalable app content instrumentation framework to enable flexible and
+        targeted content modifications within existing applications. Leveraging this framework, we create
+        a test suite comprising both a dynamic task execution environment and a static dataset of
+        challenging GUI states. The dynamic environment encompasses 122 reproducible tasks, and the
+        static dataset consists of over 3,000 scenarios constructed from commercial apps. We perform
+        experiments on both open-source and commercial GUI agents. Our findings reveal that all examined
+        agents can be significantly degraded due to third-party contents, with an average misleading rate
+        of 42.0% and 36.1% in dynamic and static environments respectively.
       </p>
     </div>
   </section>
@@ -187,532 +198,273 @@
         Experimental Results
       </h2>
 
-      <!-- Table 1: LLM Backbone Comparison -->
-      <p class="table-caption animate-on-scroll">Performance comparison of different backbone LLMs under attack scenarios.</p>
+      <!-- Table 1: Dynamic Environment -->
+      <p class="table-caption animate-on-scroll">Evaluation results of mobile GUI agents in the AgentHazard dynamic environment.</p>
       <div class="table-scroll-wrapper animate-on-scroll">
-        <table class="data-table" id="llm-table">
+        <table class="data-table" id="dynamic-table">
+          <thead>
+            <tr>
+              <th>Agent</th>
+              <th>Backend</th>
+              <th>SR<sub>benign</sub>&nbsp;↑</th>
+              <th>SR<sub>adv</sub>&nbsp;↑</th>
+              <th>ΔSR&nbsp;↓</th>
+              <th>MR&nbsp;↓</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cell-group-header" rowspan="2">M3A</td>
+              <td>4o</td>
+              <td>47.4</td>
+              <td>18.9</td>
+              <td>28.5</td>
+              <td>50.5</td>
+            </tr>
+            <tr>
+              <td>mini</td>
+              <td>21.1</td>
+              <td>4.1</td>
+              <td>17.0</td>
+              <td>59.0</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header" rowspan="3">T3A</td>
+              <td>4o</td>
+              <td>44.7</td>
+              <td>22.2</td>
+              <td>22.5</td>
+              <td>36.5</td>
+            </tr>
+            <tr>
+              <td>mini</td>
+              <td>13.2</td>
+              <td>7.0</td>
+              <td>6.2</td>
+              <td>31.8</td>
+            </tr>
+            <tr>
+              <td>r1</td>
+              <td>44.1</td>
+              <td>30.3</td>
+              <td>13.8</td>
+              <td>41.4</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header" rowspan="3">AutoDroid</td>
+              <td>4o</td>
+              <td>22.4</td>
+              <td>13.1</td>
+              <td>9.3</td>
+              <td>38.1</td>
+            </tr>
+            <tr>
+              <td>mini</td>
+              <td>5.3</td>
+              <td>7.4</td>
+              <td>-2.1</td>
+              <td>32.4</td>
+            </tr>
+            <tr>
+              <td>r1</td>
+              <td>21.7</td>
+              <td>16.4</td>
+              <td>5.3</td>
+              <td>32.4</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header" rowspan="2">AriaUI</td>
+              <td>4o</td>
+              <td>32.9</td>
+              <td>24.2</td>
+              <td>8.7</td>
+              <td>50.0</td>
+            </tr>
+            <tr>
+              <td>mini</td>
+              <td>14.5</td>
+              <td>3.7</td>
+              <td>10.8</td>
+              <td>59.0</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header" rowspan="2">UGround</td>
+              <td>4o</td>
+              <td>46.7</td>
+              <td>15.6</td>
+              <td>31.1</td>
+              <td>49.6</td>
+            </tr>
+            <tr>
+              <td>mini</td>
+              <td>31.6</td>
+              <td>8.6</td>
+              <td>23.0</td>
+              <td>46.7</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header">UI-TARS</td>
+              <td>UI-TARS-1.5</td>
+              <td>55.3</td>
+              <td>52.4</td>
+              <td>2.9</td>
+              <td class="cell-highlight">8.8</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header">Average</td>
+              <td>—</td>
+              <td>30.8</td>
+              <td>17.2</td>
+              <td>13.6</td>
+              <td><strong>42.0</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <dl class="table-notes animate-on-scroll">
+        <dt>SR<sub>benign</sub></dt><dd>Success rate in clean environment</dd>
+        <dt>SR<sub>adv</sub></dt><dd>Success rate under attack</dd>
+        <dt>ΔSR</dt><dd>SR<sub>benign</sub> − SR<sub>adv</sub></dd>
+        <dt>MR</dt><dd>Misleading Rate — fraction of episodes where agent performs a predefined misleading action</dd>
+        <dt>Highlighted</dt><dd>Best (lowest) MR</dd>
+      </dl>
+
+      <!-- Table 2: Static Dataset -->
+      <p class="table-caption animate-on-scroll" style="margin-top: var(--space-2xl);">Performance of backbone LLMs on the AgentHazard static dataset across input modalities.</p>
+      <div class="table-scroll-wrapper animate-on-scroll">
+        <table class="data-table" id="static-table">
           <thead>
             <tr>
               <th>Model</th>
-              <th>Modal</th>
-              <th>Acc<sub>safe</sub></th>
-              <th>Acc<sub>attack</sub></th>
-              <th>MR</th>
-              <th>Score</th>
+              <th>Modality</th>
+              <th>SR<sub>benign</sub>&nbsp;↑</th>
+              <th>SR<sub>adv</sub>&nbsp;↑</th>
+              <th>ΔSR&nbsp;↓</th>
+              <th>MR&nbsp;↓</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="cell-group-header" rowspan="3">gpt-4o</td>
-              <td>text-based</td>
-              <td>62.45</td>
-              <td>40.38</td>
-              <td>29.17</td>
-              <td rowspan="3"></td>
-            </tr>
-            <tr>
-              <td>vision-based</td>
-              <td>72.62</td>
-              <td>41.58</td>
-              <td>42.29</td>
-            </tr>
-            <tr>
-              <td>multi-modal</td>
-              <td>70.90</td>
-              <td>32.58</td>
-              <td>44.21</td>
-            </tr>
-            <tr>
-              <td class="cell-group-header" rowspan="3">gpt-4o-mini</td>
-              <td>text-based</td>
-              <td>55.57</td>
-              <td>36.97</td>
-              <td>37.30</td>
-              <td rowspan="3"></td>
-            </tr>
-            <tr>
-              <td>vision-based</td>
-              <td>68.21</td>
-              <td>29.56</td>
-              <td>52.62</td>
-            </tr>
-            <tr>
-              <td>multi-modal</td>
-              <td>67.63</td>
-              <td>19.78</td>
-              <td>61.20</td>
-            </tr>
-            <tr>
-              <td class="cell-group-header" rowspan="3">Claude 3.7<br>sonnet</td>
-              <td>text-based</td>
-              <td>72.71</td>
-              <td>63.11</td>
-              <td>16.34</td>
-              <td rowspan="3"></td>
-            </tr>
-            <tr>
-              <td>vision-based</td>
-              <td>73.10</td>
-              <td>59.67</td>
-              <td>21.75</td>
-            </tr>
-            <tr>
-              <td>multi-modal</td>
-              <td>82.32</td>
-              <td>64.09</td>
-              <td>23.17</td>
-            </tr>
-            <tr>
-              <td class="cell-group-header">DeepSeek<br>V3</td>
-              <td>text-based</td>
-              <td>62.80</td>
-              <td>53.97</td>
-              <td>23.57</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="cell-group-header">DeepSeek<br>R1</td>
-              <td>text-based</td>
-              <td>64.52</td>
-              <td>50.33</td>
-              <td>21.43</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <dl class="table-notes animate-on-scroll">
-        <dt>Score</dt><dd>Average of Acc<sub>safe</sub> − Acc<sub>attack</sub> + MR across modalities</dd>
-      </dl>
-
-      <!-- Table 2: Agent Performance -->
-      <p class="table-caption animate-on-scroll" style="margin-top: var(--space-2xl);">Success Rates and Misleading Rates of agents on different attack settings.</p>
-      <div class="table-scroll-wrapper animate-on-scroll">
-        <table class="data-table" id="agent-table">
-          <thead>
-            <tr>
-              <th rowspan="2">Threat Level</th>
-              <th rowspan="2">Action</th>
-              <th rowspan="2">Metric</th>
-              <th colspan="2">M3A</th>
-              <th colspan="2">SeeAct</th>
-              <th colspan="3">T3A</th>
-              <th colspan="3">AutoDroid</th>
-              <th>Cog</th>
-              <th colspan="2">UGround</th>
-              <th colspan="2">Aria UI</th>
-              <th>Avg.</th>
-            </tr>
-            <tr>
-              <th>4o</th>
-              <th>mini</th>
-              <th>4o</th>
-              <th>mini</th>
-              <th>4o</th>
-              <th>mini</th>
-              <th>R1</th>
-              <th>4o</th>
-              <th>mini</th>
-              <th>R1</th>
-              <th>Cog-9B</th>
-              <th>4o</th>
-              <th>mini</th>
-              <th>4o</th>
-              <th>mini</th>
-              <th>-</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Clean Environment -->
-            <tr class="group-border-top">
-              <td class="cell-group-header">Clean Env<br>SR</td>
-              <td></td>
-              <td></td>
-              <td>45.8</td>
-              <td>20.0</td>
-              <td>18.3</td>
-              <td>6.5</td>
-              <td>45.8</td>
-              <td>10.0</td>
-              <td>39.2</td>
-              <td>21.7</td>
-              <td>8.3</td>
-              <td>19.2</td>
-              <td>17.5</td>
-              <td class="cell-highlight">48.3</td>
-              <td>31.8</td>
-              <td>38.3</td>
-              <td>18.3</td>
-              <td>25.9</td>
-            </tr>
-
-            <!-- Threat Level Simple -->
-            <tr class="group-border-top">
-              <td class="cell-group-header" rowspan="6">Threat Level<br>Simple</td>
-              <td class="cell-sub-header" rowspan="2">Mislead to<br>Click</td>
-              <td>ΔSR</td>
-              <td>-6.4</td>
-              <td>-7.0</td>
-              <td>-4.5</td>
-              <td>-1.1</td>
-              <td>-6.1</td>
-              <td>-1.7</td>
-              <td>-0.9</td>
-              <td>0.0</td>
-              <td>-4.9</td>
-              <td>2.5</td>
-              <td>-7.3</td>
-              <td>-14.6</td>
-              <td>-8.7</td>
-              <td>-0.4</td>
-              <td>-1.6</td>
-              <td>-4.2</td>
-            </tr>
-            <tr>
-              <td>MR</td>
-              <td>6.3</td>
-              <td>13.0</td>
-              <td>10.2</td>
-              <td class="cell-highlight">21.6</td>
-              <td>8.3</td>
-              <td>6.2</td>
-              <td>5.0</td>
-              <td>3.6</td>
-              <td>12.1</td>
-              <td>3.3</td>
-              <td>4.3</td>
-              <td>6.7</td>
-              <td>5.1</td>
-              <td>5.4</td>
-              <td>3.3</td>
-              <td>7.6</td>
-            </tr>
-            <tr>
-              <td class="cell-sub-header" rowspan="2">Mislead to<br>Navigate</td>
-              <td>ΔSR</td>
-              <td>-2.8</td>
-              <td>-11.3</td>
-              <td>1.0</td>
-              <td>-6.5</td>
-              <td>4.3</td>
-              <td>0.4</td>
-              <td>3.8</td>
-              <td>0.0</td>
-              <td>-3.1</td>
-              <td>0.8</td>
-              <td>-</td>
-              <td>-17.5</td>
-              <td>-9.1</td>
-              <td>-1.6</td>
-              <td>-4.5</td>
-              <td>-3.3</td>
-            </tr>
-            <tr>
-              <td>MR</td>
-              <td>0.0</td>
-              <td>4.3</td>
-              <td>0.0</td>
-              <td>2.6</td>
-              <td>0.0</td>
-              <td>4.2</td>
-              <td>0.0</td>
-              <td>3.0</td>
-              <td>0.0</td>
-              <td>0.0</td>
-              <td>-</td>
-              <td>4.3</td>
-              <td class="cell-highlight">15.9</td>
-              <td>2.0</td>
-              <td>12.1</td>
-              <td>3.5</td>
-            </tr>
-            <tr>
-              <td class="cell-sub-header" rowspan="2">Mislead to<br>Terminate</td>
-              <td>ΔSR</td>
-              <td>1.8</td>
-              <td>-9.1</td>
-              <td>-0.5</td>
-              <td>-4.3</td>
-              <td>-6.1</td>
-              <td>-3.3</td>
-              <td>4.1</td>
-              <td>-0.7</td>
-              <td>-3.1</td>
-              <td>-0.9</td>
-              <td>-</td>
-              <td>-19.4</td>
-              <td>-6.2</td>
-              <td>3.4</td>
-              <td>-9.2</td>
-              <td>-3.8</td>
-            </tr>
-            <tr>
-              <td>MR</td>
-              <td>10.9</td>
-              <td>25.5</td>
-              <td>4.1</td>
-              <td>0.0</td>
-              <td>16.7</td>
-              <td>0.0</td>
-              <td>26.7</td>
-              <td>14.0</td>
-              <td>5.2</td>
-              <td>33.3</td>
-              <td>-</td>
-              <td>34.7</td>
-              <td class="cell-highlight">39.5</td>
-              <td>21.7</td>
-              <td>25.5</td>
-              <td>18.4</td>
-            </tr>
-
-            <!-- Threat Level Medium -->
-            <tr class="group-border-top">
-              <td class="cell-group-header" rowspan="6">Threat Level<br>Medium</td>
-              <td class="cell-sub-header" rowspan="2">Mislead to<br>Click</td>
-              <td>ΔSR</td>
-              <td>-16.2</td>
-              <td>-12.5</td>
-              <td>-6.5</td>
-              <td>-6.5</td>
-              <td>-14.4</td>
-              <td>2.5</td>
-              <td>0.8</td>
-              <td>-4.8</td>
-              <td>-1.4</td>
-              <td>2.5</td>
-              <td>-7.0</td>
-              <td>-20.7</td>
-              <td>-11.8</td>
-              <td>-13.7</td>
-              <td>-9.8</td>
-              <td>-8.0</td>
-            </tr>
-            <tr>
-              <td>MR</td>
-              <td>27.1</td>
-              <td class="cell-highlight">52.8</td>
-              <td>39.6</td>
-              <td>51.1</td>
-              <td>10.4</td>
-              <td>6.2</td>
-              <td>9.0</td>
-              <td>30.5</td>
-              <td>20.0</td>
-              <td>11.7</td>
-              <td>11.9</td>
-              <td>28.3</td>
-              <td>47.5</td>
-              <td>28.1</td>
+              <td class="cell-group-header" rowspan="3">GPT-4o</td>
+              <td>text</td>
+              <td>58.0</td>
               <td>33.9</td>
-              <td>27.2</td>
-            </tr>
-            <tr>
-              <td class="cell-sub-header" rowspan="2">Mislead to<br>Navigate</td>
-              <td>ΔSR</td>
-              <td>-13.5</td>
-              <td>-13.8</td>
-              <td>-5.0</td>
-              <td>-6.5</td>
-              <td>-16.5</td>
-              <td>0.6</td>
-              <td>-1.2</td>
-              <td>0.0</td>
-              <td>-6.9</td>
-              <td>4.1</td>
-              <td>-</td>
-              <td>-18.6</td>
-              <td>-9.8</td>
-              <td>-6.3</td>
-              <td>-6.0</td>
-              <td>-7.1</td>
-            </tr>
-            <tr>
-              <td>MR</td>
-              <td>18.8</td>
-              <td>37.5</td>
-              <td>5.8</td>
-              <td>24.4</td>
-              <td>4.2</td>
-              <td>12.8</td>
-              <td>0.0</td>
-              <td>4.1</td>
-              <td>22.4</td>
-              <td>0.0</td>
-              <td>-</td>
-              <td>21.7</td>
-              <td class="cell-highlight">41.5</td>
-              <td>14.0</td>
-              <td>22.8</td>
-              <td>16.4</td>
-            </tr>
-            <tr>
-              <td class="cell-sub-header" rowspan="2">Mislead to<br>Terminate</td>
-              <td>ΔSR</td>
-              <td>-23.1</td>
-              <td>-12.5</td>
-              <td>-6.5</td>
-              <td>-6.5</td>
-              <td>-14.0</td>
-              <td>-1.7</td>
-              <td>-4.2</td>
-              <td>-2.7</td>
-              <td>-4.5</td>
-              <td>-2.5</td>
-              <td>-</td>
-              <td>-26.7</td>
-              <td>-22.0</td>
-              <td>-11.6</td>
-              <td>-11.1</td>
-              <td>-10.7</td>
-            </tr>
-            <tr>
-              <td>MR</td>
-              <td>40.5</td>
-              <td>39.6</td>
-              <td>22.9</td>
-              <td>10.8</td>
-              <td>33.3</td>
-              <td>14.6</td>
-              <td>33.3</td>
               <td>24.1</td>
-              <td>24.1</td>
-              <td>28.3</td>
-              <td>-</td>
-              <td>38.3</td>
-              <td>39.0</td>
-              <td>35.0</td>
-              <td class="cell-highlight">45.0</td>
-              <td>30.6</td>
+              <td>47.6</td>
             </tr>
-
-            <!-- Threat Level Complex -->
+            <tr>
+              <td>vision</td>
+              <td>67.9</td>
+              <td>35.3</td>
+              <td>32.6</td>
+              <td>50.8</td>
+            </tr>
+            <tr>
+              <td>multi-modal</td>
+              <td>63.3</td>
+              <td>21.3</td>
+              <td>42.0</td>
+              <td>63.2</td>
+            </tr>
             <tr class="group-border-top">
-              <td class="cell-group-header" rowspan="6">Threat Level<br>Complex</td>
-              <td class="cell-sub-header" rowspan="2">Mislead to<br>Click</td>
-              <td>ΔSR</td>
-              <td>-18.4</td>
-              <td>-10.4</td>
-              <td>1.0</td>
-              <td>-3.7</td>
-              <td>-30.6</td>
-              <td>0.4</td>
-              <td>-4.2</td>
-              <td>-9.7</td>
-              <td>3.8</td>
-              <td>-2.5</td>
-              <td>-1.7</td>
-              <td>-20.4</td>
-              <td>-12.3</td>
-              <td>-14.6</td>
-              <td>-8.3</td>
-              <td>-8.8</td>
+              <td class="cell-group-header" rowspan="3">GPT-4o-mini</td>
+              <td>text</td>
+              <td>50.5</td>
+              <td>26.6</td>
+              <td>23.9</td>
+              <td>53.8</td>
             </tr>
             <tr>
-              <td>MR</td>
-              <td>37.5</td>
-              <td class="cell-highlight">59.6</td>
-              <td>27.5</td>
-              <td>38.9</td>
-              <td>31.3</td>
-              <td>37.5</td>
-              <td>28.3</td>
-              <td>22.4</td>
-              <td>34.5</td>
-              <td>12.1</td>
-              <td>20.0</td>
-              <td>32.7</td>
-              <td>56.1</td>
-              <td>34.5</td>
-              <td>50.0</td>
-              <td>34.9</td>
-            </tr>
-            <tr>
-              <td class="cell-sub-header" rowspan="2">Mislead to<br>Navigate</td>
-              <td>ΔSR</td>
-              <td>-10.5</td>
-              <td>-8.5</td>
-              <td>-0.7</td>
-              <td>-4.0</td>
-              <td>-16.5</td>
-              <td>0.4</td>
-              <td>-7.2</td>
-              <td>0.0</td>
-              <td>-4.9</td>
-              <td>0.8</td>
-              <td>-</td>
-              <td>-14.2</td>
-              <td>-6.8</td>
-              <td>-3.3</td>
-              <td>-5.6</td>
-              <td>-5.8</td>
-            </tr>
-            <tr>
-              <td>MR</td>
-              <td>8.5</td>
-              <td>15.4</td>
-              <td>0.0</td>
-              <td>2.5</td>
-              <td>8.3</td>
-              <td>6.2</td>
-              <td>0.0</td>
-              <td>3.5</td>
-              <td>5.2</td>
-              <td>0.0</td>
-              <td>-</td>
-              <td>10.9</td>
-              <td class="cell-highlight">24.4</td>
-              <td>15.6</td>
+              <td>vision</td>
+              <td>56.6</td>
               <td>18.5</td>
-              <td>8.5</td>
+              <td>38.1</td>
+              <td>60.5</td>
             </tr>
             <tr>
-              <td class="cell-sub-header" rowspan="2">Mislead to<br>Terminate</td>
-              <td>ΔSR</td>
-              <td>-29.9</td>
-              <td>-14.5</td>
-              <td>-10.6</td>
-              <td>-4.1</td>
-              <td>-33.2</td>
-              <td>-3.8</td>
-              <td>-9.2</td>
-              <td>-7.7</td>
-              <td>0.0</td>
-              <td>-7.5</td>
-              <td>-</td>
-              <td>-36.2</td>
-              <td>-22.3</td>
-              <td>-20.0</td>
-              <td>-14.7</td>
-              <td>-15.3</td>
+              <td>multi-modal</td>
+              <td>52.6</td>
+              <td>13.5</td>
+              <td>39.1</td>
+              <td class="cell-highlight">72.6</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header" rowspan="3">Claude&nbsp;4<br>Sonnet</td>
+              <td>text</td>
+              <td>74.8</td>
+              <td>65.5</td>
+              <td>9.3</td>
+              <td class="cell-best">11.2</td>
             </tr>
             <tr>
-              <td>MR</td>
-              <td>56.3</td>
-              <td>67.3</td>
-              <td>23.4</td>
-              <td>17.1</td>
-              <td>27.0</td>
-              <td>33.3</td>
-              <td>50.0</td>
-              <td>50.0</td>
-              <td>20.7</td>
-              <td>43.3</td>
-              <td>-</td>
-              <td>46.8</td>
-              <td>45.2</td>
-              <td>50.0</td>
-              <td class="cell-highlight">73.3</td>
-              <td>43.1</td>
+              <td>vision</td>
+              <td>71.3</td>
+              <td>61.0</td>
+              <td>10.3</td>
+              <td>18.6</td>
+            </tr>
+            <tr>
+              <td>multi-modal</td>
+              <td>74.5</td>
+              <td>55.1</td>
+              <td>19.4</td>
+              <td>11.3</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header">DeepSeek-V3</td>
+              <td>text</td>
+              <td>58.6</td>
+              <td>44.8</td>
+              <td>13.8</td>
+              <td>33.7</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header">DeepSeek-R1</td>
+              <td>text</td>
+              <td>51.5</td>
+              <td>40.0</td>
+              <td>11.5</td>
+              <td>29.8</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header cell-new" rowspan="3">GPT-5</td>
+              <td>text</td>
+              <td>72.8</td>
+              <td>59.7</td>
+              <td>13.1</td>
+              <td>11.5</td>
+            </tr>
+            <tr>
+              <td>vision</td>
+              <td>84.5</td>
+              <td>69.2</td>
+              <td>15.3</td>
+              <td>16.6</td>
+            </tr>
+            <tr>
+              <td>multi-modal</td>
+              <td>74.5</td>
+              <td>52.5</td>
+              <td>22.0</td>
+              <td>24.5</td>
+            </tr>
+            <tr class="group-border-top">
+              <td class="cell-group-header">Average</td>
+              <td>—</td>
+              <td>65.1</td>
+              <td>42.6</td>
+              <td>22.5</td>
+              <td><strong>36.1</strong></td>
             </tr>
           </tbody>
         </table>
       </div>
       <dl class="table-notes animate-on-scroll">
-        <dt>SR</dt><dd>Success Rate</dd>
-        <dt>ΔSR</dt><dd>Change in Success Rate under attack</dd>
-        <dt>MR</dt><dd>Misleading Rate</dd>
-        <dt>Highlighted</dt><dd>Most impactful value per category</dd>
+        <dt>SR<sub>benign</sub> / SR<sub>adv</sub></dt><dd>Success rate in clean / adversarial settings</dd>
+        <dt>ΔSR</dt><dd>Success rate drop under attack</dd>
+        <dt>MR</dt><dd>Misleading Rate (lower is better)</dd>
+        <dt><span class="legend-best">&#9632;</span> Best robustness</dt><dd>Lowest MR across all configurations</dd>
+        <dt><span class="legend-highlight">&#9632;</span> Highlighted</dt><dd>Highest MR (most vulnerable configuration)</dd>
       </dl>
 
     </div>
@@ -731,14 +483,19 @@
       </h2>
       <div class="bibtex-block animate-on-scroll">
         <button class="bibtex-copy-btn" data-copy-target="bibtex-entry" aria-label="Copy BibTeX citation">Copy</button>
-        <pre id="bibtex-entry">@misc{liu2025hijackingjarvis,
-  title     = {Hijacking JARVIS: Benchmarking Mobile GUI Agents against Unprivileged Third Parties},
-  author    = {Guohong Liu and Jialei Ye and Jiacheng Liu and Yuanchun Li and Wei Liu and Pengzhi Gao and Jian Luan and Yunxin Liu},
-  year      = {2025},
-  eprint    = {2507.04227},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.CR},
-  url       = {https://arxiv.org/abs/2507.04227}
+        <pre id="bibtex-entry">@inproceedings{liu2026mobilegui,
+  title     = {Mobile GUI Agents under Real-world Threats: Are We There Yet?},
+  author    = {Liu, Guohong and Ye, Jialei and Liu, Jiacheng and Liu, Wei and
+               Gao, Pengzhi and Luan, Jian and Li, Yuanchun and Liu, Yunxin},
+  booktitle = {Proceedings of the 24th Annual International Conference on
+               Mobile Systems, Applications and Services},
+  series    = {MobiSys '26},
+  year      = {2026},
+  publisher = {ACM},
+  address   = {Cambridge, United Kingdom},
+  doi       = {10.1145/3745756.3809249},
+  isbn      = {979-8-4007-2027-7/26/06},
+  url       = {https://doi.org/10.1145/3745756.3809249}
 }</pre>
       </div>
     </div>
@@ -751,7 +508,7 @@
        ===================================================== -->
   <footer class="site-footer">
     <div class="content-wrapper">
-      <p>Hijacking JARVIS &mdash; AgentHazard &copy; 2025</p>
+      <p>AgentHazard &mdash; MobiSys &rsquo;26 &nbsp;&middot;&nbsp; <a href="https://doi.org/10.1145/3745756.3809249" target="_blank" rel="noopener">10.1145/3745756.3809249</a></p>
     </div>
   </footer>
 
