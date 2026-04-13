@@ -104,4 +104,67 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* -------------------------------------------------------
+     5. Teaser carousel
+     ------------------------------------------------------- */
+  document.querySelectorAll('[data-carousel]').forEach(function (carousel) {
+    var track = carousel.querySelector('.teaser-carousel__track');
+    var slides = carousel.querySelectorAll('.teaser-slide');
+    var dots = carousel.querySelectorAll('[data-carousel-dot]');
+    var prev = carousel.querySelector('[data-carousel-prev]');
+    var next = carousel.querySelector('[data-carousel-next]');
+    var currentIndex = 0;
+    var touchStartX = 0;
+    var touchDeltaX = 0;
+
+    function render(index) {
+      currentIndex = (index + slides.length) % slides.length;
+      track.style.transform = 'translateX(' + (-100 * currentIndex) + '%)';
+
+      slides.forEach(function (slide, slideIndex) {
+        slide.classList.toggle('is-active', slideIndex === currentIndex);
+      });
+
+      dots.forEach(function (dot, dotIndex) {
+        var isActive = dotIndex === currentIndex;
+        dot.classList.toggle('is-active', isActive);
+        dot.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      });
+    }
+
+    if (prev) {
+      prev.addEventListener('click', function () {
+        render(currentIndex - 1);
+      });
+    }
+
+    if (next) {
+      next.addEventListener('click', function () {
+        render(currentIndex + 1);
+      });
+    }
+
+    dots.forEach(function (dot, dotIndex) {
+      dot.addEventListener('click', function () {
+        render(dotIndex);
+      });
+    });
+
+    carousel.addEventListener('touchstart', function (event) {
+      touchStartX = event.changedTouches[0].clientX;
+      touchDeltaX = 0;
+    }, { passive: true });
+
+    carousel.addEventListener('touchmove', function (event) {
+      touchDeltaX = event.changedTouches[0].clientX - touchStartX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function () {
+      if (Math.abs(touchDeltaX) < 40) return;
+      render(currentIndex + (touchDeltaX < 0 ? 1 : -1));
+    });
+
+    render(0);
+  });
+
 });

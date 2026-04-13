@@ -15,7 +15,7 @@
   <meta property="og:url" content="https://agenthazard.github.io/">
   <meta property="og:image" content="https://agenthazard.github.io/static/images/overview.jpg">
   <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:image:height" content="588">
   <meta property="og:type" content="article">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -29,7 +29,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="static/css/index.css">
@@ -45,7 +45,11 @@
     <ul class="site-nav__links">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#abstract">Abstract</a></li>
+      <li><a href="#threat-model">Threat Model</a></li>
+      <li><a href="#benchmark">Benchmark</a></li>
       <li><a href="#results">Results</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
       <li><a href="#citation">Cite</a></li>
     </ul>
   </nav>
@@ -62,24 +66,24 @@
         Mobile GUI Agents under Real-world Threats: Are We There Yet?
       </h1>
 
-      <p class="author-list">
-        <span data-aff="1">Guohong Liu</span>
-        <span data-aff="2">Jialei Ye</span>
-        <span data-aff="3">Jiacheng Liu</span>
-        <span data-aff="4">Wei Liu</span>
-        <span data-aff="4">Pengzhi Gao</span>
-        <span data-aff="4">Jian Luan</span>
-        <span data-aff="1" data-corresponding>Yuanchun Li</span>
-        <span data-aff="1">Yunxin Liu</span>
-      </p>
+      <div class="author-list" aria-label="Authors">
+        <span class="author-chip">Guohong Liu<sup>1</sup></span>
+        <span class="author-chip">Jialei Ye<sup>2</sup></span>
+        <span class="author-chip">Jiacheng Liu<sup>3</sup></span>
+        <span class="author-chip">Wei Liu<sup>4</sup></span>
+        <span class="author-chip">Pengzhi Gao<sup>4</sup></span>
+        <span class="author-chip">Jian Luan<sup>4</sup></span>
+        <span class="author-chip author-chip--corresponding">Yuanchun Li<sup>1</sup><sup>*</sup></span>
+        <span class="author-chip">Yunxin Liu<sup>1</sup></span>
+      </div>
 
-      <p class="affiliation-list">
-        <span><sup>1</sup> Institute for AI Industry Research (AIR), Tsinghua University</span>
-        <span><sup>2</sup> University of Electronic Science and Technology of China</span>
-        <span><sup>3</sup> Peking University</span>
-        <span><sup>4</sup> MiLM Plus, Xiaomi Inc.</span>
-      </p>
-      <p class="corresponding-note">* Corresponding author: Yuanchun Li</p>
+      <div class="affiliation-list" aria-label="Institutions">
+        <span class="affiliation-chip"><sup>1</sup> Institute for AI Industry Research (AIR), Tsinghua University</span>
+        <span class="affiliation-chip"><sup>2</sup> University of Electronic Science and Technology of China</span>
+        <span class="affiliation-chip"><sup>3</sup> Peking University</span>
+        <span class="affiliation-chip"><sup>4</sup> MiLM Plus, Xiaomi Inc.</span>
+      </div>
+      <p class="corresponding-note">* Corresponding author: Yuanchun Li (<a href="mailto:liyuanchun@air.tsinghua.edu.cn">liyuanchun@air.tsinghua.edu.cn</a>)</p>
 
       <div class="action-links">
         <a href="https://doi.org/10.1145/3745756.3809249" target="_blank" rel="noopener" class="action-link">
@@ -121,12 +125,42 @@
   <!-- =====================================================
        Teaser Image
        ===================================================== -->
-  <figure class="teaser-figure animate-on-scroll">
+  <section class="teaser-figure animate-on-scroll" aria-label="Project highlights gallery">
     <div class="content-wrapper">
-      <img src="static/images/overview.jpg" alt="Overview diagram of the AgentHazard framework, showing how unprivileged third parties inject adversarial content into mobile app screens to mislead GUI agents." width="1200" height="675">
-      <figcaption>Overview of the AgentHazard app content instrumentation framework and dynamic task execution environment.</figcaption>
+      <div class="teaser-carousel" data-carousel>
+        <div class="teaser-carousel__viewport">
+          <div class="teaser-carousel__track">
+            <figure class="teaser-slide is-active">
+              <img src="static/images/paper/intro.webp" alt="Example from the paper showing a mobile GUI agent being misled by third-party content." width="644" height="449">
+              <figcaption>Motivating example: third-party content visible on screen can directly steer a mobile GUI agent toward the wrong action.</figcaption>
+            </figure>
+            <figure class="teaser-slide">
+              <img src="static/images/paper/overview.webp" alt="Overview figure from the paper showing the AgentHazard framework and evaluation pipeline." width="1064" height="520">
+              <figcaption>Framework overview: AgentHazard instruments native app content and supports both dynamic task execution and static state-based evaluation.</figcaption>
+            </figure>
+            <figure class="teaser-slide">
+              <img src="static/images/paper/case_study.webp" alt="Case study figure from the paper showing an agent performing a destructive action after being misled." width="904" height="518">
+              <figcaption>Case study: after trusting deceptive content, an agent can escalate into high-privilege, destructive behavior without confirmation.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="teaser-carousel__controls">
+          <button class="teaser-carousel__button" type="button" data-carousel-prev aria-label="Previous slide">
+            <span aria-hidden="true">←</span>
+          </button>
+          <div class="teaser-carousel__dots" role="tablist" aria-label="Gallery slides">
+            <button class="teaser-carousel__dot is-active" type="button" data-carousel-dot aria-label="Go to slide 1" aria-selected="true"></button>
+            <button class="teaser-carousel__dot" type="button" data-carousel-dot aria-label="Go to slide 2" aria-selected="false"></button>
+            <button class="teaser-carousel__dot" type="button" data-carousel-dot aria-label="Go to slide 3" aria-selected="false"></button>
+          </div>
+          <button class="teaser-carousel__button" type="button" data-carousel-next aria-label="Next slide">
+            <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
     </div>
-  </figure>
+  </section>
 
   <hr class="section-rule">
 
@@ -136,12 +170,16 @@
   <div class="content-wrapper">
     <div class="stat-cards animate-on-scroll">
       <div class="stat-card">
-        <div class="stat-card__number">6</div>
-        <div class="stat-card__label">Agents Evaluated</div>
+        <div class="stat-card__number">122</div>
+        <div class="stat-card__label">Dynamic Tasks</div>
       </div>
       <div class="stat-card">
         <div class="stat-card__number">3,000+</div>
         <div class="stat-card__label">Attack Scenarios</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__number">33</div>
+        <div class="stat-card__label">Commercial Apps</div>
       </div>
       <div class="stat-card">
         <div class="stat-card__number">42.0%</div>
@@ -167,21 +205,112 @@
         language instructions. The increasing accuracy of these agents on standard benchmarks has raised
         expectations for large-scale real-world deployment, and there are already several commercial
         agents released and used by early adopters. However, are we really ready for GUI agents
-        integrated into our daily devices as system building blocks? We argue that an important
-        pre-deployment validation is missing to examine whether the agents can maintain their performance
+        integrated into our daily devices as system building blocks? <span class="abstract-highlight">We argue that an important
+        pre-deployment validation is missing</span> to examine whether the agents can maintain their performance
         under real-world threats. Specifically, unlike existing common benchmarks that are based on
         simple static app contents, real-world apps are filled with contents from untrustworthy third
         parties, such as advertisement emails, user-generated posts and media. These contents may
         inevitably appear in the agents' observation space and influence the task execution process. To
-        this end, we introduce a scalable app content instrumentation framework to enable flexible and
+        this end, <span class="abstract-highlight">we introduce a scalable app content instrumentation framework</span> to enable flexible and
         targeted content modifications within existing applications. Leveraging this framework, we create
-        a test suite comprising both a dynamic task execution environment and a static dataset of
-        challenging GUI states. The dynamic environment encompasses 122 reproducible tasks, and the
-        static dataset consists of over 3,000 scenarios constructed from commercial apps. We perform
+        <span class="abstract-highlight">a test suite comprising both a dynamic task execution environment and a static dataset</span> of
+        challenging GUI states. The dynamic environment encompasses <span class="abstract-highlight">122 reproducible tasks</span>, and the
+        static dataset consists of <span class="abstract-highlight">over 3,000 scenarios</span> constructed from commercial apps. We perform
         experiments on both open-source and commercial GUI agents. Our findings reveal that all examined
         agents can be significantly degraded due to third-party contents, with an average misleading rate
-        of 42.0% and 36.1% in dynamic and static environments respectively.
+        of <span class="abstract-highlight">42.0%</span> and <span class="abstract-highlight">36.1%</span> in dynamic and static environments respectively.
       </p>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- =====================================================
+       Threat Model
+       ===================================================== -->
+  <section class="section-block" id="threat-model">
+    <div class="content-wrapper">
+      <h2 class="section-heading animate-on-scroll">
+        <span class="section-heading__num">§2.</span>
+        Threat Model
+      </h2>
+
+      <p class="section-intro animate-on-scroll">
+        AgentHazard focuses on a realistic attacker model: the attacker controls only content that can
+        naturally appear inside third-party-controlled app regions, such as product descriptions, social
+        media posts, messages, titles, or filenames.
+      </p>
+
+      <div class="feature-grid animate-on-scroll">
+        <article class="feature-card">
+          <h3>What the attacker can control</h3>
+          <p>Benign-looking content placed in legitimate channels that mobile agents may read while solving a task.</p>
+        </article>
+        <article class="feature-card">
+          <h3>What the attacker cannot control</h3>
+          <p>App code, XML layouts, OS surfaces, agent prompts, hidden state, memory, or system-level privileges.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Why this matters</h3>
+          <p>The resulting attacks are stealthy, feasible on real devices, and much closer to everyday mobile use than pop-up injection assumptions.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- =====================================================
+       Benchmark
+       ===================================================== -->
+  <section class="section-block section-block--tinted" id="benchmark">
+    <div class="wide-wrapper">
+      <h2 class="section-heading animate-on-scroll">
+        <span class="section-heading__num">§3.</span>
+        Benchmark
+      </h2>
+
+      <p class="section-intro animate-on-scroll">
+        The paper uses two complementary evaluation modes: a dynamic environment for end-to-end execution
+        and a static dataset for large-scale controlled analysis.
+      </p>
+
+      <div class="benchmark-grid animate-on-scroll">
+        <article class="benchmark-card">
+          <p class="benchmark-card__eyebrow">Dynamic Environment</p>
+          <h3>122 reproducible tasks across 12 apps</h3>
+          <ul class="bullet-list">
+            <li>Real Android interaction loop with task success rules and attack rules.</li>
+            <li>One injected misleading content item per task for clean causal attribution.</li>
+            <li>Captures both task success drop and misleading actions during live execution.</li>
+          </ul>
+        </article>
+
+        <article class="benchmark-card">
+          <p class="benchmark-card__eyebrow">Static Dataset</p>
+          <h3>3,000+ scenarios across 33 commercial apps</h3>
+          <ul class="bullet-list">
+            <li>Each sample pairs screenshot, UI tree, attack rules, and success rules.</li>
+            <li>Scales evaluation across models, modalities, and attack variants.</li>
+            <li>Uses realistic third-party content regions from widely used commercial apps.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="mini-callouts animate-on-scroll">
+        <div class="mini-callout">
+          <span class="mini-callout__label">Average attack length</span>
+          <strong>~10 tokens</strong>
+        </div>
+        <div class="mini-callout">
+          <span class="mini-callout__label">Misleading actions studied</span>
+          <strong>Click / Terminate</strong>
+        </div>
+        <div class="mini-callout">
+          <span class="mini-callout__label">Stealthiness result</span>
+          <strong>37.9% detection vs 98.3% popups</strong>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -194,9 +323,14 @@
     <div class="wide-wrapper">
 
       <h2 class="section-heading animate-on-scroll">
-        <span class="section-heading__num">§2.</span>
+        <span class="section-heading__num">§4.</span>
         Experimental Results
       </h2>
+
+      <p class="section-intro animate-on-scroll">
+        The dynamic results show that nearly all evaluated agents are frequently misled by realistic
+        third-party content, while the static benchmark exposes broader modality and model-level trends.
+      </p>
 
       <!-- Table 1: Dynamic Environment -->
       <p class="table-caption animate-on-scroll">Evaluation results of mobile GUI agents in the AgentHazard dynamic environment.</p>
@@ -308,7 +442,7 @@
               <td>55.3</td>
               <td>52.4</td>
               <td>2.9</td>
-              <td class="cell-highlight">8.8</td>
+              <td class="cell-best">8.8</td>
             </tr>
             <tr class="group-border-top">
               <td class="cell-group-header">Average</td>
@@ -473,12 +607,148 @@
   <hr class="section-rule">
 
   <!-- =====================================================
+       Key Insights
+       ===================================================== -->
+  <section class="section-block section-block--tinted" id="insights">
+    <div class="wide-wrapper">
+      <h2 class="section-heading animate-on-scroll">
+        <span class="section-heading__num">§5.</span>
+        Key Insights
+      </h2>
+
+      <div class="insight-grid animate-on-scroll">
+        <article class="insight-card">
+          <h3>Vision helps benign performance, but hurts robustness</h3>
+          <p>Across GPT-4o, GPT-4o-mini, Claude 4 Sonnet, and GPT-5, <span class="insight-highlight">visual and multimodal settings are more vulnerable than text-only settings</span> under attack.</p>
+        </article>
+        <article class="insight-card">
+          <h3>Robustness varies by backbone, but no model is immune</h3>
+          <p><span class="insight-highlight">Claude 4 Sonnet and GPT-5 are substantially stronger</span> than GPT-4o and GPT-4o-mini, yet adversarial content still transfers across model families.</p>
+        </article>
+        <article class="insight-card">
+          <h3>GUI-specific post-training helps</h3>
+          <p><span class="insight-highlight">UI-TARS-1.5 achieves the strongest dynamic robustness</span>, suggesting value in action-space-aware GUI training rather than generic planner behavior.</p>
+        </article>
+        <article class="insight-card">
+          <h3>Mixed attacks are especially dangerous</h3>
+          <p>Repeating the same misleading element does not help much, but <span class="insight-highlight">combining attack types pushes misleading rate to 83.3%</span> in the paper’s mixed-action setting.</p>
+        </article>
+        <article class="insight-card">
+          <h3>Simple adversarial training is not enough</h3>
+          <p>It reduces misleading behavior, but <span class="insight-highlight">even adversarially fine-tuned models still remain vulnerable</span>, pointing to architectural fixes beyond training-time patches.</p>
+        </article>
+        <article class="insight-card">
+          <h3>Source trust and action confirmation are missing</h3>
+          <p>The paper’s case study shows an agent escalating from confusion to <span class="insight-highlight">irreversible data deletion without verifying source authenticity or asking the user</span>.</p>
+        </article>
+      </div>
+
+      <div class="case-study-panel animate-on-scroll">
+        <div class="case-study-panel__copy">
+          <p class="case-study-panel__eyebrow">Case Study</p>
+          <h3>Tail-risk behavior can be severe</h3>
+          <p>
+            In one example, AriaUI is misled by injected content claiming that the task is infeasible.
+            Instead of carefully verifying the message, the agent navigates into system settings and clears
+            the app’s data, deleting user content rather than completing the requested task.
+          </p>
+          <ul class="bullet-list">
+            <li>Failure mode 1: the agent trusts unverified third-party content as authoritative.</li>
+            <li>Failure mode 2: the agent performs a destructive, high-privilege action without user confirmation.</li>
+          </ul>
+        </div>
+        <div class="phone-gallery">
+          <figure class="phone-shot">
+            <img src="static/images/paper/attack-example-original.png" alt="Original mobile app screen before adversarial content injection." width="1080" height="2160">
+            <figcaption>Original screen</figcaption>
+          </figure>
+          <figure class="phone-shot">
+            <img src="static/images/paper/attack-example-demo1.png" alt="Mobile app screen after adversarial content injection showing misleading task-related text." width="1080" height="2160">
+            <figcaption>Injected content</figcaption>
+          </figure>
+          <figure class="phone-shot">
+            <img src="static/images/paper/attack-example-demo2.png" alt="Follow-up mobile app screen showing the misleading result of the injected content." width="1080" height="2160">
+            <figcaption>Agent gets redirected</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="attention-panel animate-on-scroll">
+        <div class="attention-panel__copy">
+          <p class="case-study-panel__eyebrow">Defense Analysis</p>
+          <h3>Adversarial training shifts attention, but does not solve the root problem</h3>
+          <p>
+            The paper visualizes that benign fine-tuning can improve general task competence while still
+            leaving the model overly attracted to crafted third-party content. Adversarial training helps,
+            but the remaining misleading rate suggests agents still need trust-aware perception and safer
+            action policies.
+          </p>
+        </div>
+        <div class="attention-gallery">
+          <figure class="attention-shot">
+            <img src="static/images/paper/raw.png" alt="Original screenshot used in the adversarial training attention analysis." width="1080" height="2160">
+            <figcaption>Original</figcaption>
+          </figure>
+          <figure class="attention-shot">
+            <img src="static/images/paper/base.png" alt="Attention visualization of the baseline model without supervised fine-tuning." width="1080" height="2160">
+            <figcaption>No SFT</figcaption>
+          </figure>
+          <figure class="attention-shot">
+            <img src="static/images/paper/benign.png" alt="Attention visualization of the benign fine-tuned model." width="1080" height="2160">
+            <figcaption>Benign SFT</figcaption>
+          </figure>
+          <figure class="attention-shot">
+            <img src="static/images/paper/adv.png" alt="Attention visualization of the adversarially fine-tuned model." width="1080" height="2160">
+            <figcaption>Adv. SFT</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="lesson-grid animate-on-scroll">
+        <article class="lesson-card">
+          <h3>For model builders</h3>
+          <p>Improve robustness to deceptive visual content, add uncertainty-aware action selection, and train trust-sensitive reasoning over GUI observations.</p>
+        </article>
+        <article class="lesson-card">
+          <h3>For agent designers</h3>
+          <p>Separate trusted UI signals from third-party content and require explicit confirmation before high-risk or irreversible operations.</p>
+        </article>
+        <article class="lesson-card">
+          <h3>For system developers</h3>
+          <p>Expose source metadata and agent-aware permission controls so autonomous actions can be audited and constrained by the platform.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- =====================================================
+       Acknowledgements
+       ===================================================== -->
+  <section class="section-block" id="acknowledgements">
+    <div class="content-wrapper">
+      <h2 class="section-heading animate-on-scroll">
+        <span class="section-heading__num">§6.</span>
+        Acknowledgements
+      </h2>
+      <p class="acknowledgement-text animate-on-scroll">
+        This research was supported in part by the National Natural Science Foundation of China under
+        Grant No. 62272261, Wuxi Research Institute of Applied Technologies, Tsinghua University under
+        Grant 20242001120, and Xiaomi Foundation.
+      </p>
+    </div>
+  </section>
+
+  <hr class="section-rule">
+
+  <!-- =====================================================
        BibTeX Citation
        ===================================================== -->
   <section class="section-block" id="citation">
     <div class="content-wrapper">
       <h2 class="section-heading animate-on-scroll">
-        <span class="section-heading__num">§3.</span>
+        <span class="section-heading__num">§7.</span>
         Citation
       </h2>
       <div class="bibtex-block animate-on-scroll">
