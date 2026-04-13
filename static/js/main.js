@@ -4,6 +4,59 @@
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
+  var siteNav = document.querySelector('.site-nav');
+  var navToggle = document.querySelector('.site-nav__toggle');
+  var navMenu = document.getElementById('site-nav-links');
+
+  function closeNavMenu() {
+    if (!siteNav || !navToggle) return;
+    siteNav.setAttribute('data-menu-open', 'false');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
+  }
+
+  function openNavMenu() {
+    if (!siteNav || !navToggle) return;
+    siteNav.setAttribute('data-menu-open', 'true');
+    navToggle.setAttribute('aria-expanded', 'true');
+    navToggle.setAttribute('aria-label', 'Close navigation menu');
+  }
+
+  function isPhoneNav() {
+    return window.matchMedia('(max-width: 480px)').matches;
+  }
+
+  closeNavMenu();
+
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', function () {
+      var isOpen = siteNav.getAttribute('data-menu-open') === 'true';
+      if (isOpen) {
+        closeNavMenu();
+      } else {
+        openNavMenu();
+      }
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!isPhoneNav()) return;
+      if (!siteNav.contains(event.target)) {
+        closeNavMenu();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        closeNavMenu();
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (!isPhoneNav()) {
+        closeNavMenu();
+      }
+    });
+  }
 
   /* -------------------------------------------------------
      1. Smooth scroll for anchor links
@@ -20,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ) || 52;
       var top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
       window.scrollTo({ top: top, behavior: 'smooth' });
+      closeNavMenu();
     });
   });
 

@@ -42,7 +42,12 @@
        ===================================================== -->
   <nav class="site-nav" aria-label="Page navigation">
     <a href="#overview" class="site-nav__brand">AgentHazard</a>
-    <ul class="site-nav__links">
+    <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-nav-links" aria-label="Open navigation menu">
+      <span class="site-nav__toggle-line"></span>
+      <span class="site-nav__toggle-line"></span>
+      <span class="site-nav__toggle-line"></span>
+    </button>
+    <ul class="site-nav__links" id="site-nav-links">
       <li><a href="#overview">Overview</a></li>
       <li><a href="#abstract">Abstract</a></li>
       <li><a href="#threat-model">Threat Model</a></li>
@@ -657,6 +662,7 @@
             <li>Failure mode 2: the agent performs a destructive, high-privilege action without user confirmation.</li>
           </ul>
         </div>
+        <p class="gallery-hint" aria-hidden="true">Swipe to view more →</p>
         <div class="phone-gallery">
           <figure class="phone-shot">
             <img src="static/images/paper/attack-example-original.png" alt="Original mobile app screen before adversarial content injection." width="1080" height="2160">
@@ -684,6 +690,7 @@
             action policies.
           </p>
         </div>
+        <p class="gallery-hint" aria-hidden="true">Swipe to view more →</p>
         <div class="attention-gallery">
           <figure class="attention-shot">
             <img src="static/images/paper/raw.png" alt="Original screenshot used in the adversarial training attention analysis." width="1080" height="2160">
@@ -704,6 +711,7 @@
         </div>
       </div>
 
+      <p class="subsection-label animate-on-scroll">Suggestions</p>
       <div class="lesson-grid animate-on-scroll">
         <article class="lesson-card">
           <h3>For model builders</h3>
